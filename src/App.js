@@ -9,7 +9,8 @@ function App() {
   const googleConfig = {
     clientId: process.env.REACT_APP_GOOGLE_CLIENT_ID,
     redirectUri: process.env.REACT_APP_GOOGLE_REDIRECT_URI_FE,
-    scope: 'https://www.googleapis.com/auth/analytics.readonly',
+    // Multiple scopes separated by spaces
+    scope: 'https://www.googleapis.com/auth/analytics.readonly https://www.googleapis.com/auth/webmasters.readonly https://www.googleapis.com/auth/adwords',
     responseType: 'code',
     accessType: 'offline',
     prompt: 'consent'
@@ -51,13 +52,23 @@ function App() {
   return (
     <div className="container">
       <header>
-        <h1>Google Analytics Authorization</h1>
-        <p className="subtitle">Simple OAuth code generator for KPI Dashboard</p>
+        <h1>Google Marketing APIs Authorization</h1>
+        <p className="subtitle">OAuth code generator for Google Analytics, Search Console, and Google Ads</p>
       </header>
       
       {!authCode ? (
         <div className="connect-section">
-          <p>Click the button below to connect with your Google account and authorize access to your Google Analytics data.</p>
+          <p>Click the button below to connect with your Google account and authorize access to your Google marketing data.</p>
+
+          <div className="permissions-info">
+            <h3>Permissions Requested:</h3>
+            <ul>
+              <li>Google Analytics (read-only access)</li>
+              <li>Google Search Console (read-only access)</li>
+              <li>Google Ads (read-only access)</li>
+            </ul>
+          </div>
+
           <button className="connect-button" onClick={handleConnect}>Connect with Google</button>
         </div>
       ) : (
