@@ -10,7 +10,7 @@ function App() {
     clientId: process.env.REACT_APP_GOOGLE_CLIENT_ID,
     redirectUri: process.env.REACT_APP_GOOGLE_REDIRECT_URI_FE,
     // Multiple scopes separated by spaces
-    scope: 'https://www.googleapis.com/auth/analytics.readonly https://www.googleapis.com/auth/webmasters.readonly https://www.googleapis.com/auth/adwords',
+    scope: 'https://www.googleapis.com/auth/analytics.readonly https://www.googleapis.com/auth/webmasters.readonly https://www.googleapis.com/auth/adwords https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile',
     responseType: 'code',
     accessType: 'offline',
     prompt: 'consent'
@@ -66,6 +66,7 @@ function App() {
               <li>Google Analytics (read-only access)</li>
               <li>Google Search Console (read-only access)</li>
               <li>Google Ads (read-only access)</li>
+              <li>User profile information (email, name, photo)</li>
             </ul>
           </div>
 
