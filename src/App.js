@@ -75,7 +75,7 @@ function App() {
       ) : (
         <div className="code-section">
           <h2>Authorization Code Generated</h2>
-          <p className="instructions">Use this code in your <strong>POST</strong> request to: <code>http://localhost:3000/google/oauth</code></p>
+          <p className="instructions">Use this code in your <strong>PUT</strong> request to: <code>https://kpi-dashboard.mpkmb.com/google/oauth</code></p>
           
           <div className="code-display">
             <p className="code-label">Your authorization code:</p>
@@ -96,7 +96,7 @@ function App() {
           <div className="api-example">
             <h3>API Request Example:</h3>
             <pre>
-{`PUT http://localhost:3000/google/oauth
+{`PUT https://kpi-dashboard.mpkmb.com/google/oauth
 Content-Type: application/json
 Authorization: Bearer YOUR_AUTH_TOKEN
 
